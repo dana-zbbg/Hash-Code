@@ -21,3 +21,40 @@ struct Schedule
 
     Schedule(; A, intersections) = new(A, intersections)
 end
+
+function Base.string(light::Light)::String
+    street = light.street
+    T = light.T
+    str = street * " $T"
+    return str
+end
+
+
+function Base.string(intersection::Intersection)::String
+    i = intersection.i
+    E = intersection.E
+    lights = intersection.lights
+    str = "$(i-1)" * "\n" * "$E"
+    for light in intersection.lights
+        str *= "\n" * string(light)
+    end
+    return str
+end
+
+
+function Base.string(schedule::Schedule)::String
+    A = schedule.A
+    str = "$A"
+    for intersection in schedule.intersections
+        str *= "\n" * string(intersection)
+    end
+    return str
+end
+
+
+function write_solution(schedule::Schedule, path::String)::Bool
+    open(path, "w") do file
+        write(file, string(schedule))
+    end
+    return true
+end
