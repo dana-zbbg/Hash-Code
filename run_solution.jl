@@ -4,6 +4,7 @@ include("naive_function.jl")
 
 path = joinpath("..", "a.txt")
 instance = lire_instance(path)
+println(instance.I)
 
-intersections = naive_function(instance, 2)
+intersections = naive(instance, 2)
 schedule = Schedule(A = instance.I, intersections = intersections)
