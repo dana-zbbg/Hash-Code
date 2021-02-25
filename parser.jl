@@ -38,6 +38,8 @@ function lire_instance(path::String)::Instance
     S = dims[3]
     V = dims[4]
     F = dims[5]
+    streets = Vector{Street}()
+    paths = Vector{Path}()
 
     for (i=2:S+1)
         street = data[i]
@@ -45,13 +47,18 @@ function lire_instance(path::String)::Instance
         E = street[2]
         name = street[3]
         L = street[4]
+        push!(streets, Street(B=B, E=E, name=name, L=L))
     end
 
     for (i=S+2:S+V+1)
-
-
+        path = data[i]
+        P = path[1]
+        street_names = Vector{String}()
+        for (j=1:P)
+            push!(street_names, path[1+j])
+        end
+        push!(paths, Path(P=P, street_names=street_names))
     end
-
 
     return Instance(D=D, I=I, S=S, V=V, F=F, streets=streets, paths=paths)
 end
