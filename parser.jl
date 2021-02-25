@@ -41,7 +41,7 @@ function lire_instance(path::String)::Instance
     streets = Vector{Street}()
     paths = Vector{Path}()
 
-    for (i=2:S+1)
+    for i=2:S+1
         street = split(data[i], " ")
         B = parse(Int, street[1])
         E = parse(Int, street[2])
@@ -50,11 +50,11 @@ function lire_instance(path::String)::Instance
         push!(streets, Street(B=B, E=E, name=name, L=L))
     end
 
-    for (i=S+2:S+V+1)
+    for i=S+2:S+V+1
         path = split(data[i], " ")
         P = parse(Int, path[1])
         street_names = Vector{String}()
-        for (j=1:P)
+        for j=1:P
             push!(street_names, path[1+j])
         end
         push!(paths, Path(P=P, street_names=street_names))
