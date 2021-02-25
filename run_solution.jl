@@ -2,7 +2,7 @@ include("parser.jl")
 include("solution.jl")
 include("naive_function.jl")
 
-path = joinpath("..", "a.txt")
+path = joinpath(".", "a.txt")
 instance = lire_instance(path)
 println(instance.I)
 
