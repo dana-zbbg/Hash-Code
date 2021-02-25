@@ -1,6 +1,6 @@
 function naive(instance::Instance, T::Int )
     intersections = Vector{Intersection}()
-    for i=1:instance.I #pour chaque intersection
+    for i=0:(instance.I-1) #pour chaque intersection
         lights = Vector{Light}()
         E = 0 #nb de incoming streets
         for s in instance.streets #on regarde si la route est une incoming street

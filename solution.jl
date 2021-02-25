@@ -34,7 +34,7 @@ function Base.string(intersection::Intersection)::String
     i = intersection.i
     E = intersection.E
     lights = intersection.lights
-    str = "$i" * "\n" * "$E"
+    str = "$(i-1)" * "\n" * "$E"
     for light in intersection.lights
         str *= "\n" * string(light)
     end
