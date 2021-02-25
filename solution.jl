@@ -1,8 +1,8 @@
-struct Schedule
-    A::Int  #nb intersections
-    intersections::Vector{Intersection}
+struct Light
+    street::String  #nom de la route
+    T::Int  #duree de son feu vert
 
-    Schedule(; A, intersections) = new(A, intersections)
+    Light(; street, T) = new(street, T)
 end
 
 
@@ -15,9 +15,9 @@ struct Intersection
 end
 
 
-struct Light
-    street::String  #nom de la route
-    T::Int  #duree de son feu vert
+struct Schedule
+    A::Int  #nb intersections
+    intersections::Vector{Intersection}
 
-    Light(; street, T) = new(street, T)
+    Schedule(; A, intersections) = new(A, intersections)
 end
