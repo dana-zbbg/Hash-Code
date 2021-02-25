@@ -3,12 +3,16 @@ struct Street
     E::Int
     name::String
     L::Int
+
+    Street(; B, E, name, L) = new(B, E, name, L)
 end
 
 
 struct Path
     P::Int
     street_names::Vector{String}
+
+    Path(; P, street_names) = new(P, street_names)
 end
 
 
