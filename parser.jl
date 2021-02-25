@@ -1,27 +1,27 @@
 struct Street
-    B::Int
-    E::Int
-    name::String
-    L::Int
+    B::Int  #id intersection begin
+    E::Int  #id intersection end
+    name::String  #nom de la rue
+    L::Int  #longueur (temps)
 
     Street(; B, E, name, L) = new(B, E, name, L)
 end
 
 
 struct Path
-    P::Int
-    street_names::Vector{String}
+    P::Int  #nb streets
+    street_names::Vector{String}  #street names
 
     Path(; P, street_names) = new(P, street_names)
 end
 
 
 struct Instance
-    D::Int
-    I::Int
-    S::Int
-    V::Int
-    F::Int
+    D::Int  #duree simulation
+    I::Int  #nb intersection
+    S::Int  #nb streets
+    V::Int  #nb cars
+    F::Int  #nb bonus points for cars reaching their destination
 
     streets::Vector{Street}
     paths::Vector{Path}
