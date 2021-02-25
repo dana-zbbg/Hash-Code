@@ -11,5 +11,5 @@ function naive(instance::Instance, T::Int )
         end
         push!(instersections, Intersection(i = i, E = E, lights = lights))
     end
+    return intersections
 end
-          
