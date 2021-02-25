@@ -2,8 +2,8 @@ include("parser.jl")
 include("solution.jl")
 include("naive_function.jl")
 
-path = joinpath("..", "a.txt")
+path = joinpath(".", "a.txt")
 instance = lire_instance(path)
 
-intersections = naive_function(instance, 2)
+intersections = naive(instance, 2)
 schedule = Schedule(A = instance.I, intersections = intersections)
