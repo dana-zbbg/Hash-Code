@@ -7,4 +7,4 @@ instance = lire_instance(path)
 println(instance.I)
 
 intersections = naive(instance, 2)
-schedule = Schedule(A = instance.I, intersections = intersections)
+schedule = Schedule(A = I, intersections = intersections)
